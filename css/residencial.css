@@ -1,0 +1,401 @@
+/* ============================================
+   PÁGINA RESIDENCIAL
+   ============================================ */
+
+/* Hero da página */
+.hero-page {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--cor-accent) 0%, var(--cor-fundo) 100%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.hero-page h1 {
+    font-size: 3rem;
+    color: var(--cor-escura);
+    margin-bottom: 15px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-page p {
+    font-size: 1.3rem;
+    color: #666;
+    animation: fadeInUp 1.2s ease;
+}
+
+/* ============================================
+   SOBRE RESIDENCIAL
+   ============================================ */
+
+.sobre-residencial {
+    padding: 80px 0;
+    background: white;
+}
+
+.sobre-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.sobre-texto h2 {
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #666;
+    text-align: justify;
+}
+
+.servicos-residencial h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.lista-servicos {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-servicos li {
+    padding: 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--cor-accent) 0%, rgba(232, 184, 155, 0.3) 100%);
+    border-left: 4px solid var(--cor-primaria);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.lista-servicos li:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(212, 131, 91, 0.2);
+}
+
+.lista-servicos strong {
+    color: var(--cor-primaria);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.lista-servicos p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* ============================================
+   PORTFÓLIO RESIDENCIAL
+   ============================================ */
+
+.portfolio-residencial {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(232, 184, 155, 0.1) 0%, rgba(245, 220, 200, 0.2) 100%);
+}
+
+.portfolio-residencial h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.portfolio-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.grid-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.projeto-card {
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--cor-primaria);
+}
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(212, 131, 91, 0.25);
+}
+
+.projeto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.projeto-card h3 {
+    color: var(--cor-primaria);
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.projeto-seta {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover .projeto-seta {
+    transform: rotate(45deg);
+}
+
+.projeto-descricao {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ============================================
+   DETALHES DO PROJETO (MODAL)
+   ============================================ */
+
+.projeto-detalhes {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    overflow-y: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.projeto-detalhes.active {
+    display: block;
+}
+
+.projeto-detalhes .container {
+    padding: 60px 0;
+    position: relative;
+}
+
+.projeto-detalhes h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.projeto-detalhes p {
+    color: #ccc;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--cor-primaria);
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2001;
+}
+
+.btn-fechar:hover {
+    background: var(--cor-destaque);
+    transform: rotate(90deg);
+}
+
+.galeria-projeto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.galeria-item-projeto {
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-accent) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    min-height: 250px;
+}
+
+.galeria-item-projeto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ============================================
+   CTA RESIDENCIAL
+   ============================================ */
+
+.cta-residencial {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-destaque) 100%);
+    text-align: center;
+    color: white;
+}
+
+.cta-residencial h2 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cta-residencial p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-residencial .btn-primary {
+    background: white;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+.cta-residencial .btn-primary:hover {
+    background: var(--cor-accent);
+    color: var(--cor-escura);
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   RESPONSIVO
+   ============================================ */
+
+@media (max-width: 992px) {
+    .sobre-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .grid-projetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-page h1 {
+        font-size: 2.3rem;
+    }
+
+    .cta-residencial h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-page {
+        padding: 60px 20px;
+        min-height: 300px;
+    }
+
+    .hero-page h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-page p {
+        font-size: 1.1rem;
+    }
+
+    .sobre-residencial {
+        padding: 50px 20px;
+    }
+
+    .portfolio-residencial {
+        padding: 50px 20px;
+    }
+
+    .grid-projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .lista-servicos li {
+        padding: 15px;
+        margin-bottom: 12px;
+    }
+
+    .galeria-projeto {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto-detalhes .container {
+        padding: 40px 20px;
+    }
+
+    .btn-fechar {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+
+    .cta-residencial {
+        padding: 50px 20px;
+    }
+
+    .cta-residencial h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-residencial p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-page h1 {
+        font-size: 1.5rem;
+    }
+
+    .projeto-card {
+        padding: 20px;
+    }
+
+    .projeto-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .projeto-descricao {
+        font-size: 0.85rem;
+    }
+
+    .galeria-item-projeto {
+        min-height: 150px;
+    }
+}
