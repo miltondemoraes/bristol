@@ -1,14 +1,18 @@
 /* ============================================
-   CORES PRINCIPAIS
+   CORES PRINCIPAIS - TONS DE MADEIRA
    ============================================ */
 :root {
-    --cor-primaria: #D4835B;
-    --cor-secundaria: #E8B89B;
-    --cor-accent: #F5DCC8;
-    --cor-escura: #5A4A3A;
-    --cor-texto: #3D3D3D;
-    --cor-fundo: #FEFAF5;
-    --cor-destaque: #FF9A3D;
+    --cor-primaria: #8B6F47;
+    --cor-secundaria: #A0826D;
+    --cor-accent: #D4A574;
+    --cor-escura: #3E2723;
+    --cor-texto: #4A3728;
+    --cor-fundo: #FAF8F3;
+    --cor-destaque: #C17A4A;
+    --madeira-clara: #D7CCCB;
+    --madeira-media: #8B6F47;
+    --madeira-escura: #5D4037;
+    --madeira-dourada: #D4A574;
 }
 
 /* ============================================
@@ -198,18 +202,19 @@ p {
     color: white;
     transition: all 0.3s ease;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(212, 131, 91, 0.3);
+    box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(62, 39, 35, 0.2);
 }
 
 .btn:hover {
     background: var(--cor-destaque);
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(212, 131, 91, 0.4);
+    box-shadow: 0 6px 16px rgba(139, 111, 71, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* BOTÃO PRIMÁRIO */
 .btn-primary {
-    background: var(--cor-primaria);
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, #7A5C3A 100%);
     color: white;
     padding: 16px 40px;
     border-radius: 8px;
@@ -217,14 +222,28 @@ p {
     font-weight: 700;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(212, 131, 91, 0.3);
+    box-shadow: 0 4px 12px rgba(139, 111, 71, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     text-decoration: none;
+    border: 1px solid rgba(62, 39, 35, 0.2);
+    position: relative;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="1"/></filter><rect width="100" height="100" fill="%23000" filter="url(%23noise)" opacity="0.02"/></svg>');
+    border-radius: 8px;
+    pointer-events: none;
 }
 
 .btn-primary:hover {
-    background: var(--cor-destaque);
+    background: linear-gradient(135deg, var(--cor-destaque) 0%, #A65C2A 100%);
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(212, 131, 91, 0.4);
+    box-shadow: 0 8px 20px rgba(139, 111, 71, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* HAMBURGER */
@@ -258,10 +277,12 @@ p {
 }
 
 .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .hero-content {
@@ -285,15 +306,7 @@ p {
     animation: fadeInUp 1.4s ease;
 }
 
-/* HERO IMAGES */
-.hero-images {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-    justify-content: center;
-    flex-wrap: wrap;
-    z-index: 1;
-}
+    <!-- Estilos para hero-images removidos, seção não é mais usada -->
 
 .hero-img {
     position: relative;
@@ -419,10 +432,11 @@ p {
 }
 
 .sobre-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     align-items: center;
+    text-align: center;
 }
 
 .sobre-content h2 {
@@ -434,7 +448,7 @@ p {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #666;
-    text-align: justify;
+    text-align: center;
 }
 
 /* SOBRE IMAGES */
@@ -575,17 +589,20 @@ p {
 .btn-secondary {
     display: inline-block;
     padding: 10px 24px;
-    background: var(--cor-secundaria);
+    background: linear-gradient(135deg, var(--madeira-media) 0%, #6D4C41 100%);
     color: white;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    border: 1px solid rgba(62, 39, 35, 0.2);
+    box-shadow: 0 2px 8px rgba(93, 64, 55, 0.2);
 }
 
 .btn-secondary:hover {
-    background: var(--cor-primaria);
+    background: linear-gradient(135deg, var(--cor-destaque) 0%, #A65C2A 100%);
     transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3);
 }
 
 /* ============================================
@@ -1005,4 +1022,114 @@ p {
     .container {
         width: 95%;
     }
+}
+
+/* ============================================
+   DETALHES DE MADEIRA
+   ============================================ */
+
+/* Decoração de painel de madeira */
+.servicos::before,
+.sobre::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--cor-primaria) 0%, var(--madeira-escura) 100%);
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Decoração de moldura */
+.servico,
+.metric,
+.projeto-card {
+    position: relative;
+    border: 1px solid rgba(139, 111, 71, 0.1);
+}
+
+/* Detalhes de textura de madeira em seções */
+section {
+    position: relative;
+}
+
+section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--madeira-clara) 20%, 
+        var(--madeira-clara) 80%, 
+        transparent 100%);
+    opacity: 0.3;
+}
+
+/* Destaque em links */
+a {
+    position: relative;
+}
+
+/* Borderline decorativa em cards */
+.servico,
+.projeto-card {
+    border-left: 4px solid var(--madeira-media);
+    padding-left: 20px;
+}
+
+/* Efeito de profundidade em botões com padrão de madeira */
+.btn-secondary {
+    background: linear-gradient(135deg, var(--madeira-media) 0%, #6D4C41 100%);
+    color: white;
+    border: 1px solid rgba(62, 39, 35, 0.2);
+    box-shadow: 0 4px 12px rgba(93, 64, 55, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--cor-destaque) 0%, #A65C2A 100%);
+    box-shadow: 0 6px 16px rgba(93, 64, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Padrão de textura sutil */
+.hero,
+.sobre,
+.servicos,
+.galeria {
+    background-attachment: fixed;
+    position: relative;
+}
+
+.hero::after,
+.sobre::after,
+.servicos::after,
+.galeria::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 111, 71, 0.01) 2px,
+            rgba(139, 111, 71, 0.01) 4px
+        );
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Garantir que conteúdo fica acima da textura */
+.hero > .container,
+.sobre > .container,
+.servicos > .container,
+.galeria > .container {
+    position: relative;
+    z-index: 2;
 }
